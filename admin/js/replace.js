@@ -4,7 +4,7 @@ function replaceData(){
     const xhr = new XMLHttpRequest();
     xhr.open("POST", "https://sub.drscripter32.workers.dev/api/v1/replace");
     xhr.setRequestHeader("Content-Type", "text/sos-sher");
-    const body = pass+","+data;
+    const body = pass+","+btoa(data);
     xhr.onload = () => {
         if (xhr.readyState == 4 && xhr.status == 201) {
         console.log(xhr.responseText);
